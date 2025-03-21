@@ -518,7 +518,7 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Premium Laptops for Every Need</h1>
-            <p>Discover the perfect blend of performance, design, and value with Jorally Holdings' exclusive range of laptops.</p>
+        <p>Discover the perfect blend of performance, design, and value with Jorally Holdings. Explore our premium range of Laptops, Monitors, CPUs, Computer Accessories, and UPS systems—tailored for both personal and professional needs.</p>
             <a href="#products" class="btn">Browse Products</a>
         </div>
     </section>
@@ -676,12 +676,12 @@
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <ul class="social-icons">
+            <!-- <ul class="social-icons">
                 <li><a href="#"><span>Facebook</span></a></li>
                 <li><a href="#"><span>Twitter</span></a></li>
                 <li><a href="#"><span>Instagram</span></a></li>
                 <li><a href="#"><span>LinkedIn</span></a></li>
-            </ul>
+            </ul> -->
             <p class="copyright">© 2025 Joraly Holdings. All Rights Reserved.</p>
         </div>
     </footer>
@@ -737,38 +737,156 @@ const laptops = [
  const monitors = [
             {
                 id: 1,
-                name: "Dell UltraSharp 27",
-                specs: "27\" 4K IPS Panel, HDR, 60Hz, USB-C Connectivity",
-                price: 42000,
-                image: "/api/placeholder/300/200"
+                name: "Dell E2723H Frameless ",
+                specs: "27\" 1920*1080, HDR, 60Hz, USB-C Connectivity",
+                price: 13581,
+                image: "/images/Del1.png"
             },
             {
                 id: 2,
-                name: "LG UltraGear 34",
-                specs: "34\" WQHD Curved, 144Hz, 1ms, G-Sync Compatible",
-                price: 65000,
-                image: "/api/placeholder/300/200"
+                name: "Del SE3223Q",
+                specs: "34\" 4k UHD,FreeSync",
+                price: 47859,
+                image: "/images/Del2-.png"
             },
             {
                 id: 3,
-                name: "Samsung Odyssey G7",
-                specs: "32\" WQHD Curved, 240Hz, 1ms, HDR600",
-                price: 78500,
-                image: "/api/placeholder/300/200"
+                name: "N Del Monitor",
+                specs: "32\" 4K, 60MHz, 1ms, HDR600,Low Blue Light",
+                price: 46566,
+                image: "/images/Del2-.png"
             },
             {
                 id: 4,
                 name: "HP E24 G4",
-                specs: "24\" FHD IPS, 60Hz, 5ms, Ergonomic Stand",
+                specs: "27\" FHD IPS, 75Hz, Ergonomic Stand",
                 price: 25000,
-                image: "/api/placeholder/300/200"
+                image:"/images/Hp e24.png"
             },
             {
                 id: 5,
-                name: "ASUS ProArt PA279CV",
-                specs: "27\" 4K IPS, 100% sRGB, Calman Verified, USB-C",
-                price: 55000,
-                image: "/api/placeholder/300/200"
+                name: "HP V24 G5",
+                specs: "24\" 4K 1920*1080, 100% sRGB, HDMI, USB-C",
+                price: 28000,
+                image: "/images/Hp v24.png"
+            }
+        ];
+
+
+        // Sample CPU data
+        const cpus = [
+            {
+                id: 1,
+                name: "All in One PC",
+                specs: "intel Core i7, 32, 256GB",
+                price: 65000,
+                image: "/images/All1.png"
+            },
+            {
+                id: 2,
+                name: "New Generation Desktop Workstation",
+                specs: "16 Cores, 32 Threads, 5.7GHz Max, AM5",
+                price: 72000,
+                image: "/images/station.png"
+            },
+            {
+                id: 3,
+                name: "Intel Core i7-14700K",
+                specs: "7 Cores, 28 Threads, 5.5GHz Max, LGA 1700",
+                price: 48000,
+                image: "/images/sta2.png"
+            },
+            {
+                id: 4,
+                name: "Dells Vostro V3910",
+                specs: "Desktop Computer Pc Intel Core I7 Tower",
+                price: 90000,
+                image: "/images/vostro.png"
+            },
+            {
+                id: 5,
+                name: "Acer N4270 13th Gen",
+                specs: "8GB 256GB SSD Intel Office Design a Game PC",
+                price: 50000,
+                image: "/images/acer.png"
+            }
+        ];
+
+        // Sample UPS data
+        const ups = [
+            {
+                id: 1,
+                name: "APC Schneider UPS 1500VA",
+                specs: "1500VA/800W, LCD Display, Blac, USB Connection",
+                price: 35000,
+                image: "/images/UPS1.png"
+            },
+            {
+                id: 2,
+                name: "6kva Tower UPS 220V",
+                specs: "Used in Home Backup POwer Supply",
+                price: 28000,
+                image: "/images/ups2.png"
+            },
+            {
+                id: 3,
+                name: "Mini Ups for Router and Modems",
+                specs: "for Cctv Wifi Router USB Mobile Phone Mini Ups",
+                price: 12000,
+                image: "/images/ups3.png"
+            },
+            {
+                id: 4,
+                name: "Industrial 3 Phase UPS 10KVA",
+                specs: "60KVA 100KVA 120KVA 150KVA UPS Backup Power Supply",
+                price: 260000,
+                image: "/images/ups4.png"
+            }
+        ];
+
+        // Sample accessories data
+        const accessories = [
+            {
+                id: 1,
+                name: "Rechargeable Mouse",
+                specs: "Wireless Mouse,Bluetooth/USB",
+                price: 500,
+                image: "/images/mouse1.png"
+            },
+            {
+                id: 2,
+                name: "Portable Mini Ultra-thin",
+                specs: "Rechargeable Wireless BT mouse",
+                price: 500,
+                image: "/images/m2.png"
+            },
+            {
+                id: 3,
+                name: "Gaming Mouse",
+                specs: "6D Ergonomic, RGB OPtical USB Wired",
+                price: 700,
+                image: "/images/g1.png"
+            },
+            {
+                id: 4,
+                name: "Gaming Keyboard",
+                specs: "Gaming Keyboard and Mouse Combo Portable Mini RGB Backlight Mechanical Feeling and RGB Optical Mouse for Gamers and Typists",
+                price: 2000,
+                image: "/images/combo1.png"
+            },
+            {
+                id: 5,
+                name: "Gaming Mechanical Keyboard",
+                specs: "High Quality 104 LED RGB Backlight Gaming Mechanical Keyboard with Ergonomic USB Mouse Combo",
+                price: 2500,
+                image: "/images/combo2.png"
+            },
+            {
+                id: 6,
+                name: "OEM Headphones",
+                specs: "Wired Headset Earphone",
+                price: 1500,
+                image: "/images/acc1.png"
             }
         ];
 
