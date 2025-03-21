@@ -149,6 +149,41 @@
             margin: 0 auto 40px;
         }
 
+        /* Product Category Navigation */
+        .category-nav {
+            background-color: #0056b3;
+            padding: 15px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+        }
+
+        .category-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .category-links li {
+            margin: 0 15px;
+        }
+
+        .category-links a {
+            color: white;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            padding: 5px 0;
+        }
+
+        .category-links a:hover {
+            opacity: 0.8;
+        }
+
+        .category-links a.active {
+            border-bottom: 2px solid white;
+        }
+
         /* About Section */
         .mission {
             background-color: white;
@@ -166,64 +201,126 @@
         }
 
         /* Laptop Section */
-        .laptops {
-            background-color: #f5f5f5;
-        }
-
-        .laptop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .laptop-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .laptop-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .laptop-img {
-            height: 200px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .laptop-img img {
-    max-width: 100%; /* Prevent the image from overflowing */
-    max-height: 100%; /* Ensure it doesn't exceed the div */
-    object-fit: cover; /* Fit within the container while maintaining aspect ratio */
-    display: block;
+ /* Update the laptop/product grid styling */
+/* Product grid and card styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
-        .laptop-info {
-            padding: 20px;
-        }
+.laptop-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Change from fixed height to auto */
+    min-height: 320px; /* Add min-height instead */
+}
 
-        .laptop-info h3 {
-            margin-bottom: 10px;
-        }
+.laptop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        .laptop-specs {
-            color: #666;
-            margin-bottom: 15px;
-        }
+.product-img {
+    height: 160px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
 
-        .laptop-price {
-            color: #0056b3;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+.product-img img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
 
+.laptop-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* justify-content: space-between; */
+}
+
+.laptop-info h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.laptop-specs {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.laptop-price {
+    color: #0056b3;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.laptop-card .btn {
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto; /* This will push the button to the bottom */
+    display: block; /* Ensures full width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .laptop-card {
+        height: 300px;
+    }
+    
+    .product-img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .laptop-card {
+        height: auto;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
         /* Testimonials Section */
         .testimonials {
             background-color: white;
@@ -408,7 +505,7 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#mission">About Us</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -422,9 +519,22 @@
         <div class="container">
             <h1>Premium Laptops for Every Need</h1>
             <p>Discover the perfect blend of performance, design, and value with Jorally Holdings' exclusive range of laptops.</p>
-            <a href="#laptops" class="btn">Browse Laptops</a>
+            <a href="#products" class="btn">Browse Products</a>
         </div>
     </section>
+
+    <!-- Category Navigation -->
+    <div class="category-nav" id="products">
+        <div class="container">
+            <ul class="category-links" id="categoryLinks">
+                <li><a href="#laptops" class="active">Laptops</a></li>
+                <li><a href="#monitors">Monitors</a></li>
+                <li><a href="#cpus">CPUs</a></li>
+                <li><a href="#ups">UPS</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Mission Section -->
     <section class="mission" id="mission">
@@ -432,22 +542,63 @@
             <h2 class="section-title">Our Mission</h2>
             <div class="mission-content">
                 <p>At Jorally Holdings, we believe that technology should empower everyone. Our mission is to provide high-quality, affordable laptops that cater to diverse needs—from professional workstations to gaming powerhouses.</p>
-                <p>Since the conception of our company, we've quickly established ourselves as a trusted name in the tech industry. Our team of experts personally tests and curates each laptop to ensure it meets our strict standards of performance, durability, and value.</p>
+                <p>Since the conception of our company, we've quickly established ourselves as a trusted name in the tech industry. Our team of experts personally tests and curates each product to ensure it meets our strict standards of performance, durability, and value.</p>
                 <p>We're committed to exceptional customer service and strive to make your laptop buying experience seamless and satisfying. Whether you're a student, professional, or casual user, we have the perfect laptop for you.</p>
             </div>
         </div>
     </section>
 
     <!-- Laptops Section -->
-    <section class="laptops" id="laptops">
+    <section class="product-section" id="laptops">
         <div class="container">
-            <h2 class="section-title">Our Laptops</h2>
-            <div class="laptop-grid" id="laptopGrid">
+            <h2 class="section-title">Laptops</h2>
+            <div class="product-grid" id="laptopGrid">
                 <!-- Laptop cards will be added dynamically -->
             </div>
         </div>
     </section>
 
+      <!-- Monitors Section -->
+      <section class="product-section" id="monitors">
+        <div class="container">
+            <h2 class="section-title">Monitors</h2>
+            <div class="product-grid" id="monitorGrid">
+                <!-- Monitor cards will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+     <!-- CPUs Section -->
+     <section class="product-section" id="cpus">
+        <div class="container">
+            <h2 class="section-title">CPUs</h2>
+            <div class="product-grid" id="cpuGrid">
+                <!-- CPU cards will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+     <!-- Accessories Section -->
+     <section class="product-section" id="accessories">
+        <div class="container">
+            <h2 class="section-title">Computer Accessories</h2>
+            <div class="product-grid" id="accessoriesGrid">
+                <!-- Accessories cards will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- UPS Section -->
+    <section class="product-section" id="ups">
+        <div class="container">
+            <h2 class="section-title">UPS</h2>
+            <div class="product-grid" id="upsGrid">
+                <!-- UPS cards will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+    
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -465,10 +616,20 @@
                     <p class="testimonial-text">"My son needed a laptop for school, and the Hp Elitebook was a perfect choice. It's durable, fast enough for his needs, and the price was unbeatable. The customer service was also excellent!"</p>
                     <p class="testimonial-author">Jacob Okelo</p>
                 </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The Dell 27-inch monitor I bought from Jorally has transformed my home office setup. The color accuracy is perfect for my photography work, and the customer support was exceptional."</p>
+                    <p class="testimonial-author">Mary Apiyo</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"After my old UPS failed during a power outage, I purchased the APC Smart-UPS from Jorally. It saved my work during the next blackout! Delivery was prompt and installation support was helpful."</p>
+                    <p class="testimonial-author">Daniel Mwangi</p>
+                </div>
                 <div class="slider-dots">
                     <div class="dot active" data-index="0"></div>
                     <div class="dot" data-index="1"></div>
                     <div class="dot" data-index="2"></div>
+                    <div class="dot" data-index="3"></div>
+                    <div class="dot" data-index="4"></div>
                 </div>
             </div>
         </div>
@@ -488,11 +649,12 @@
                     <p>Have questions about our products or need assistance? Reach out to us, and our friendly team will be happy to help you find the perfect laptop for your needs.</p>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Your Message" required></textarea>
+                    <form id="contactForm" name="laptop-order" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="laptop-order">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
@@ -507,6 +669,10 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#mission">About Us</a></li>
                 <li><a href="#laptops">Laptops</a></li>
+                <li><a href="#monitors">Monitors</a></li>
+                <li><a href="#cpus">CPUs</a></li>
+                <li><a href="#ups">UPS</a></li>
+                <li><a href="#accessories">Accessories</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -567,14 +733,59 @@ const laptops = [
     //     image: "/api/placeholder/300/200"
     // }
 ];
+ // Sample monitor data
+ const monitors = [
+            {
+                id: 1,
+                name: "Dell UltraSharp 27",
+                specs: "27\" 4K IPS Panel, HDR, 60Hz, USB-C Connectivity",
+                price: 42000,
+                image: "/api/placeholder/300/200"
+            },
+            {
+                id: 2,
+                name: "LG UltraGear 34",
+                specs: "34\" WQHD Curved, 144Hz, 1ms, G-Sync Compatible",
+                price: 65000,
+                image: "/api/placeholder/300/200"
+            },
+            {
+                id: 3,
+                name: "Samsung Odyssey G7",
+                specs: "32\" WQHD Curved, 240Hz, 1ms, HDR600",
+                price: 78500,
+                image: "/api/placeholder/300/200"
+            },
+            {
+                id: 4,
+                name: "HP E24 G4",
+                specs: "24\" FHD IPS, 60Hz, 5ms, Ergonomic Stand",
+                price: 25000,
+                image: "/api/placeholder/300/200"
+            },
+            {
+                id: 5,
+                name: "ASUS ProArt PA279CV",
+                specs: "27\" 4K IPS, 100% sRGB, Calman Verified, USB-C",
+                price: 55000,
+                image: "/api/placeholder/300/200"
+            }
+        ];
 
 // DOM Elements
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinks = document.getElementById('navLinks');
-const laptopGrid = document.getElementById('laptopGrid');
-const dots = document.querySelectorAll('.dot');
-const testimonials = document.querySelectorAll('.testimonial');
-const contactForm = document.getElementById('contactForm');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const categoryLinks = document.getElementById('categoryLinks');
+        // const laptopGrid = document.getElementById('laptopGrid');
+        // const monitorGrid = document.getElementById('monitorGrid');
+        // const cpuGrid = document.getElementById('cpuGrid');
+        // const upsGrid = document.getElementById('upsGrid');
+        // const accessoriesGrid = document.getElementById('accessoriesGrid');
+        const dots = document.querySelectorAll('.dot');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const contactForm = document.getElementById('contactForm');
+        // const backToTop = document.getElementById('backToTop');
+
 
 // Mobile Menu Toggle
 mobileMenuBtn.addEventListener('click', () => {
@@ -588,63 +799,114 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
-// Populate Laptops
-function displayLaptops() {
-    laptopGrid.innerHTML = '';
-    
-    laptops.forEach(laptop => {
-        const laptopCard = document.createElement('div');
-        laptopCard.className = 'laptop-card';
-        
-        laptopCard.innerHTML = `
-            <div class="laptop-img">
-                <img src="${laptop.image}" alt="${laptop.name}">
-            </div>
-            <div class="laptop-info">
-                <h3>${laptop.name}</h3>
-                <p class="laptop-specs">${laptop.specs}</p>
-                <p class="laptop-price"> KSH ${laptop.price.toFixed(2)}</p>
-                <button class="btn make-order" data-id="${laptop.id}">Make Order</button>
-            </div>
-        `;
-        
-        laptopGrid.appendChild(laptopCard);
+// Category Navigation (continuing from where it was cut off)
+categoryLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Remove active class from all links
+        categoryLinks.querySelectorAll('a').forEach(l => l.classList.remove('active'));
+        // Add active class to clicked link
+        link.classList.add('active');
     });
-    
-    // Make Order functionality
-    document.querySelectorAll('.make-order').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const laptopId = e.target.getAttribute('data-id');
-            const selectedLaptop = laptops.find(l => l.id == laptopId);
-            
-            // Navigate to contact section
-            const contactSection = document.querySelector('#contact');
-            window.scrollTo({
-                top: contactSection.offsetTop - 80,
-                behavior: 'smooth'
-            });
-            
-            // Pre-fill the subject field if it exists
-            const subjectField = document.querySelector('#contactForm input[placeholder="Subject"]');
-            if (subjectField) {
-                subjectField.value = `Order Inquiry: ${selectedLaptop.name}`;
-            }
-            
-            // Pre-fill the message field if it exists
-            const messageField = document.querySelector('#contactForm textarea');
-            if (messageField) {
-                messageField.value = `I'm interested in ordering the ${selectedLaptop.name} ($${selectedLaptop.price.toFixed(2)}). Please provide me with more information about availability and payment options.`;
-            }
-            
-            // Optional: Focus on the first empty field
-            const nameField = document.querySelector('#contactForm input[placeholder="Your Name"]');
-            if (nameField && !nameField.value) {
-                nameField.focus();
-            }
-        });
+});
+//  // Back to Top Button
+//  window.addEventListener('scroll', () => {
+//             if (window.scrollY > 300) {
+//                 backToTop.classList.add('show');
+//             } else {
+//                 backToTop.classList.remove('show');
+//             }
+//         });
+//         backToTop.addEventListener('click', () => {
+//             window.scrollTo({
+//                 top: 0,
+//                 behavior: 'smooth'
+//             });
+//         });
+
+    function displayProducts(products, gridId) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return; // Ensure the grid exists
+
+       // Clear existing content
+       grid.innerHTML = '';
+
+    products.forEach(product => {
+        const card = createProductCard(product);
+        grid.appendChild(card);
     });
+
+    // Reattach event listeners for order buttons
+    // attachOrderEventListeners();
 }
 
+
+// Create product cards function
+function createProductCard(product) {
+    const card = document.createElement('div');
+    card.className = 'laptop-card';
+    
+    card.innerHTML = `
+        <div class="product-img">
+            <img src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="laptop-info">
+            <h3>${product.name}</h3>
+            <p class="laptop-specs">${product.specs}</p>
+            <p class="laptop-price">KSh ${product.price.toLocaleString()}</p>
+           <button class="btn order-btn" data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}">Make Order</button>
+        </div>
+    `;
+    
+    return card;
+}
+   // Attach event listeners to "Make Order" buttons
+
+    // Attach event listeners to "Make Order" buttons
+    
+// Replace your existing attachOrderEventListeners function
+function setupOrderButtons() {
+    // Use event delegation for better performance
+    document.addEventListener('click', function(event) {
+        // Check if the clicked element is an order button
+        if (event.target.classList.contains('order-btn')) {
+            // Get product details from data attributes
+            const productId = event.target.getAttribute('data-product-id');
+            const productName = event.target.getAttribute('data-product-name');
+            const productPrice = event.target.getAttribute('data-product-price');
+            
+            // Scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                window.scrollTo({
+                    top: contactSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Pre-fill the contact form
+                const subjectField = document.querySelector('input[name="subject"]');
+                if (subjectField) {
+                    subjectField.value = `Order Inquiry: ${productName}`;
+                }
+                
+                const messageField = document.querySelector('textarea[name="message"]');
+                if (messageField) {
+                    messageField.value = `I'm interested in ordering the ${productName} (KSh ${parseInt(productPrice).toLocaleString()}). Please provide more details.`;
+                }
+                
+                // Focus on name field
+                const nameField = document.querySelector('input[name="name"]');
+                if (nameField) {
+                    nameField.focus();
+                }
+            }
+        }
+    });
+}
+// Display products dynamically
+// document.addEventListener('DOMContentLoaded', () => {
+//     displayProducts(laptops, 'laptopGrid');
+//     displayProducts(monitors, 'monitorGrid');
+// });
 // Testimonial Slider
 dots.forEach(dot => {
     dot.addEventListener('click', () => {
@@ -678,29 +940,56 @@ setInterval(autoSlide, 5000);
 
 // Contact Form Submission
 contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your order! We will get back to you soon.');
-    contactForm.reset();
+    setTimeout(() => {
+        alert('Thank you for your order! We will get back to you soon.');
+    }, 500);
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
+ // Smooth scrolling for navigation links
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-});
 
 // Initialize the page
+// Replace your existing window.onload function
 window.onload = function() {
-    displayLaptops();
+    // Display products for each category
+    if (laptops && laptops.length > 0) {
+        displayProducts(laptops, 'laptopGrid');
+    }
+    
+    if (monitors && monitors.length > 0) {
+        displayProducts(monitors, 'monitorGrid');
+    }
+    
+    if (typeof cpus !== 'undefined' && cpus.length > 0) {
+        displayProducts(cpus, 'cpuGrid');
+    }
+    
+    if (typeof ups !== 'undefined' && ups.length > 0) {
+        displayProducts(ups, 'upsGrid');
+    }
+    
+    if (typeof accessories !== 'undefined' && accessories.length > 0) {
+        displayProducts(accessories, 'accessoriesGrid');
+    }
+    
+    // Set up the order buttons - using event delegation instead of individual listeners
+    setupOrderButtons();
+    
+    console.log('Page initialization complete');
 };
     </script>
 </body>
